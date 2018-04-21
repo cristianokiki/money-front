@@ -1,0 +1,22 @@
+<div class="ui-g ">
+
+<div class="navbar-menu navbar-display" [class.navbar-display-block]="mostrarMenu" >
+    <p-panelMenu [model]="itens"></p-panelMenu>
+  </div>
+
+<nav class="navbar ui-g-12" >
+  <div class="container">
+    <div class="ui-g-9">
+          <a pButton icon="fas fa-bars"
+                     class="nav-button"
+                     pTooltip="menu"
+                     tooltipPosition="top"
+                     (click)="mostrarMenu = !mostrarMenu"></a>
+    </div>
+    <div class="ui-g-3" style="text-align:center; color:white; margin-top: 10px; text-transform: uppercase;">
+      <label>Cristiano Abreu Souza</label>
+    </div>
+  </div>
+
+</nav>
+</div>

@@ -1,0 +1,162 @@
+<div class="container" style="margin-top: 60px;" >
+
+  <div class="ui-g">
+
+    <div class="ui-g-12">
+      <h1>Lançamentos</h1>
+    </div>
+
+    <div class="ui-g-12 ui-fluid">
+      <label >Descrição</label>
+      <input pInputText type="text"/>
+    </div>
+
+    <div class="ui-g-12">
+        <label style="display: block" >Vencimento</label>
+
+        <p-calendar [(ngModel)]="ontem"
+                    readonlyInput="true"
+                    dateFormat="dd/mm/yy"
+                    [locale]="br">
+        </p-calendar>
+
+        <label>até</label>
+        <p-calendar [(ngModel)]="hoje"
+                    readonlyInput="true"
+                    dateFormat="dd/mm/yy"
+                    [locale]="br">
+        </p-calendar>
+
+    </div>
+
+    <div class="ui-g-12">
+
+      <button pButton
+              type="button"
+              label="Pesquisar"
+              icon="fas fa-search"
+              iconPos="left">
+      </button>
+    </div>
+
+<div class="ui-g">
+    <div class="ui-g-12">
+
+      <!--
+<p-table [value]="lancamentos"
+         [paginator]="true"
+         [rows]="10"
+         [responsive]="true"
+         [columns]="colunas" >
+
+         <ng-template pTemplate="header" let-col >
+            <tr>
+              <th *ngFor="let col of colunas" [style.width]="col.width" >
+                {{col.header}}
+              </th>
+            </tr>
+         </ng-template>
+
+         <ng-template pTemplate="body" let-lancamento let-columns="colunas">
+            <tr>
+              <td *ngFor="let col of colunas"  [ngClass]="colunas.class">
+
+                <span *ngIf="col.field.startsWith('data'); else campo" >
+                    {{lancamento[col.field] | date: 'dd/MM/yyyy'}}
+                </span>
+
+               <ng-template #campo>
+
+                <span *ngIf="col.field.startsWith('valor'); else outros"
+                      [style.color]="lancamento.tipo === 'DESPESA' ? 'red' : 'blue'"
+                   >
+                    {{lancamento[col.field]}}
+                </span>
+
+                <ng-template #outros>
+                  {{lancamento[col.field]}}
+                </ng-template>
+
+              </ng-template>
+
+               <span *ngIf="col.field == ''">
+                  <button pButton icon="fas fa-edit" pTooltip="editar" tooltipPosition="top" ></button>
+                  <button pButton icon="fas fa-trash"  pTooltip="excluir" tooltipPosition="top" ></button>
+               </span>
+
+              </td>
+            </tr>
+         </ng-template>
+
+</p-table>
+-->
+<!--
+       <p-table emptyMessage="Não contém registros"
+                   [value]="lancamentos"
+                   [paginator]="true"
+                   [rows]="10"
+                   [rowsPerPageOptions]="[5,10,15,20,25]"
+                   [responsive]="true">
+
+                      <ng-template pTemplate="header">
+                          <tr>
+                            <th>Pessoa</th>
+                            <th style="width: 200px;">Descrição</th>
+                            <th style="width: 120px;">Vencimento</th>
+                            <th style="width: 120px;">Pagamento</th>
+                            <th style="width: 120px;" >Valor</th>
+                            <th style="width: 100px;"></th>
+                          </tr>
+                        </ng-template>
+
+                        <ng-template pTemplate="body" let-lanc>
+                            <tr>
+                              <td>{{lanc.pessoa}}</td>
+                              <td>{{lanc.descricao}}</td>
+                              <td class="col-data">{{lanc.dataVencimento | date: 'dd/MM/yyyy'}}</td>
+                              <td class="col-data">{{lanc.dataPagamento | date: 'dd/MM/yyyy'}}</td>
+                              <td class="col-valor" [style.color]="lanc.tipo === 'DESPESA' ? 'red' : 'blue'">{{lanc.valor}}</td>
+                              <td class="col-button">
+                                <button pButton icon="fas fa-edit" pTooltip="editar" tooltipPosition="top" ></button>
+                                <button pButton icon="fas fa-trash"  pTooltip="excluir" tooltipPosition="top" ></button>
+                              </td>
+                            </tr>
+                        </ng-template>
+        </p-table>
+      -->
+
+
+                  <p-table [value]="lancamentos"
+                  [paginator]="true"
+                  [rows]="10"
+                  [responsive]="true">
+
+                  <ng-template pTemplate="header" let-col >
+                     <tr>
+                       <th *ngFor="let col of colunas" [style.width]="col.width" >
+                         {{col.header}}
+                       </th>
+                     </tr>
+                  </ng-template>
+
+                  <ng-template pTemplate="body" let-lancamento>
+                     <tr>
+                      <td *ngFor="let col of colunas" >
+
+                        <span [ngClass]="col.class" [style.color]="lancamento.tipo  === 'DESPESA' ? 'red' : 'blue'"> {{lancamento[col.field]}}</span>
+
+                      </td>
+                     </tr>
+                  </ng-template>
+
+         </p-table>
+
+  </div>
+</div>
+
+<div class="ui-g-12">
+  <button pButton type="submit" icon="fa fa-plus" label="Novo Lançamento"> </button>
+</div>
+
+  </div>
+</div>

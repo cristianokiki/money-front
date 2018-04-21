@@ -1,0 +1,33 @@
+.navbar {
+  background: #1e94d2;
+  padding: 10px 0;
+}
+
+.nav-button {
+  background: #1e94d2;
+  border: none;
+}
+
+.navbar-menu {
+
+  position: fixed;
+  top: 67px;
+  bottom: 0;
+  left: 0;
+  width: 250px;
+  margin: 0;
+  border-top: solid white;
+  z-index: 9999;
+  background-color: #1e94d2;
+}
+
+@media(max-width: 1650px) {
+  .navbar-display {
+    display: none;
+  }
+}
+
+.navbar-display-block {
+  display: block;
+  z-index: 9999;
+}

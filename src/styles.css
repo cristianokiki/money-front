@@ -1,1 +1,76 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  color: #404c51;
+  margin: 0px;
+
+  font-weight: bold;
+
+}
+
+@media(min-width: 1200px){
+  .container {
+    width: 1170px;
+    margin: 0px auto;
+  }
+}
+
+.ui-inputtext {
+  width: 95px;
+}
+
+.ui-column-title{
+  color: gray !important;
+  font-size: 12pt !important;
+}
+
+.ui-datatable-emptymessage {
+  color: pink !important;
+  font-size: 10pt !important;
+  text-align: center;
+}
+
+.col-button{
+  width: 120px;
+  text-align: center;
+}
+
+.col-valor{
+  width: 100px;
+  text-align: right;
+}
+
+.col-data{
+  width: 120px;
+  text-align: center;
+}
+
+.ui-panelmenu {
+  background-color: #1e94d2 !important;
+}
+.ui-panelmenu-content {
+  background-color: #696969 !important;
+  border: none;
+}
+
+.ui-menuitem-link:hover {
+  background-color: #6495ED !important;
+}
+
+.ui-panelmenu-header {
+  background-color: #1e94d2 !important;
+  border: none;
+  color: white;
+}
+
+.ui-menuitem-text{
+  color: white;
+}
+
+.ui-menuitem-icon {
+  color: white;
+}
+
+.ui-panelmenu-icon {
+  color: white;
+}
