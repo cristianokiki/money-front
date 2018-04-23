@@ -10,7 +10,7 @@ export class PessoasPesquisaComponent {
 
     public colunas = [
       { field: 'nome', header: 'Nome' },
-      { field: 'endereco', header: 'Cidade' },
+      { field: 'endereco.logradouro', header: 'Cidade' },
       { field: 'endereco', header: 'Estado' },
       { field: 'ativo', header: 'Status' }
     ];

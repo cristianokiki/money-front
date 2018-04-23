@@ -20,7 +20,8 @@ export class CampoColoridoDirective {
   @HostListener('blur') aoPerderFoco(): void {
     this.renderer.setStyle(this.elementRef.nativeElement, 'background-color', 'transparent');
   }*/
-@Input('appCampoColorido') cor = 'gray';
+
+  @Input('appCampoColorido') cor = 'gray';
 
   @HostBinding('style.backgroundColor') private corFundo: string;
 

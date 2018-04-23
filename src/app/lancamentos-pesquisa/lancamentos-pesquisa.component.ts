@@ -1,3 +1,4 @@
+import { Utils } from './../util/util';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -13,17 +14,7 @@ export class LancamentosPesquisaComponent  {
 
     hoje: Date = new Date();
     ontem: Date = new Date();
-    br = {
-      firstDayOfWeek: 0,
-      dayNames: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'],
-      dayNamesShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'],
-      dayNamesMin: ['Do', 'Sg', 'Te', 'Qa', 'Qi', 'Sx', 'Sb'],
-      monthNames: [ 'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho',
-        'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
-      monthNamesShort: [ 'Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
-      today: 'Hoje',
-      clear: 'Limpar'
-  };
+    calendarioBr = Utils.padraoCalendarioBr;
 
   colunas = [
     { field: 'pessoa', header: 'Pessoa', width: '', class: ''},
@@ -32,13 +23,13 @@ export class LancamentosPesquisaComponent  {
     { field: 'dataPagamento', header: 'Pagamento', width: '120px', class: 'col-data'},
     { field: 'valor', header: 'Valor', width: '120px', class: 'col-valor' },
     { field: '', header: '', width: '100px', class: 'col-button'}
-  ]
+  ];
 
   lancamentos = [
     {
        "codigo":2,
        "descricao":"Salário mensal",
-       "dataVencimento":"2017-06-10",
+       "dataVencimento": new Date(2017, 6, 10),
        "dataPagamento":null,
        "valor":6500,
        "tipo":"RECEITA",
@@ -48,8 +39,8 @@ export class LancamentosPesquisaComponent  {
     {
        "codigo":3,
        "descricao":"Bahamas",
-       "dataVencimento":"2017-02-10",
-       "dataPagamento":"2017-02-10",
+       "dataVencimento":new Date(2017, 2, 10),
+       "dataPagamento":new Date(2017, 2, 10),
        "valor":100.32,
        "tipo":"DESPESA",
        "categoria":"Lazer",
@@ -58,8 +49,8 @@ export class LancamentosPesquisaComponent  {
     {
        "codigo":4,
        "descricao":"Bahamas",
-       "dataVencimento":"2017-02-10",
-       "dataPagamento":"2017-02-10",
+       "dataVencimento":new Date(2017, 2, 10),
+       "dataPagamento":new Date(2017, 2, 10),
        "valor":100.32,
        "tipo":"DESPESA",
        "categoria":"Lazer",
@@ -68,8 +59,8 @@ export class LancamentosPesquisaComponent  {
     {
        "codigo":8,
        "descricao":"CEMIG",
-       "dataVencimento":"2017-02-10",
-       "dataPagamento":"2017-02-10",
+       "dataVencimento":new Date(2017, 2, 10),
+       "dataPagamento":new Date(2017, 2, 10),
        "valor":110.44,
        "tipo":"RECEITA",
        "categoria":"Limpeza",
@@ -78,8 +69,8 @@ export class LancamentosPesquisaComponent  {
     {
        "codigo":9,
        "descricao":"CEMIG",
-       "dataVencimento":"2017-02-10",
-       "dataPagamento":"2017-02-10",
+       "dataVencimento":new Date(2017, 2, 10),
+       "dataPagamento":new Date(2017, 2, 10),
        "valor":110.44,
        "tipo":"RECEITA",
        "categoria":"Diversão",
@@ -88,7 +79,7 @@ export class LancamentosPesquisaComponent  {
     {
        "codigo":11,
        "descricao":"DMAE",
-       "dataVencimento":"2017-06-10",
+       "dataVencimento": new Date(2017, 6, 10),
        "dataPagamento":null,
        "valor":200.3,
        "tipo":"DESPESA",
@@ -98,7 +89,7 @@ export class LancamentosPesquisaComponent  {
     {
        "codigo":12,
        "descricao":"DMAE",
-       "dataVencimento":"2017-06-10",
+       "dataVencimento": new Date(2017, 6, 10),
        "dataPagamento":null,
        "valor":200.3,
        "tipo":"DESPESA",
@@ -108,7 +99,7 @@ export class LancamentosPesquisaComponent  {
     {
        "codigo":13,
        "descricao":"DMAE",
-       "dataVencimento":"2017-06-10",
+       "dataVencimento": new Date(2017, 6, 10),
        "dataPagamento":null,
        "valor":200.3,
        "tipo":"DESPESA",
@@ -118,7 +109,7 @@ export class LancamentosPesquisaComponent  {
     {
        "codigo":14,
        "descricao":"DMAE",
-       "dataVencimento":"2017-06-10",
+       "dataVencimento": new Date(2017, 6, 10),
        "dataPagamento":null,
        "valor":200.3,
        "tipo":"DESPESA",
@@ -128,7 +119,7 @@ export class LancamentosPesquisaComponent  {
     {
        "codigo":15,
        "descricao":"DMAE",
-       "dataVencimento":"2017-06-10",
+       "dataVencimento": new Date(2017, 6, 10),
        "dataPagamento":null,
        "valor":200.3,
        "tipo":"DESPESA",
@@ -138,7 +129,7 @@ export class LancamentosPesquisaComponent  {
     {
        "codigo":16,
        "descricao":"DMAE",
-       "dataVencimento":"2017-06-10",
+       "dataVencimento": new Date(2017, 6, 10),
        "dataPagamento":null,
        "valor":200.3,
        "tipo":"DESPESA",
@@ -148,8 +139,8 @@ export class LancamentosPesquisaComponent  {
     {
        "codigo":17,
        "descricao":"Extra",
-       "dataVencimento":"2017-03-10",
-       "dataPagamento":"2017-03-10",
+       "dataVencimento":new Date(2017, 3, 10),
+       "dataPagamento":new Date(2017, 3, 10),
        "valor":1010.32,
        "tipo":"RECEITA",
        "categoria":"Escolar",
@@ -158,8 +149,8 @@ export class LancamentosPesquisaComponent  {
     {
        "codigo":18,
        "descricao":"Extra",
-       "dataVencimento":"2017-03-10",
-       "dataPagamento":"2017-03-10",
+       "dataVencimento":new Date(2017, 3, 10),
+       "dataPagamento":new Date(2017, 3, 10),
        "valor":1010.32,
        "tipo":"RECEITA",
        "categoria":"Escolar",
@@ -168,8 +159,8 @@ export class LancamentosPesquisaComponent  {
     {
        "codigo":19,
        "descricao":"Extra",
-       "dataVencimento":"2017-03-10",
-       "dataPagamento":"2017-03-10",
+       "dataVencimento":new Date(2017, 3, 10),
+       "dataPagamento":new Date(2017, 3, 10),
        "valor":1010.32,
        "tipo":"RECEITA",
        "categoria":"Escolar",
@@ -178,8 +169,8 @@ export class LancamentosPesquisaComponent  {
     {
        "codigo":20,
        "descricao":"Extra",
-       "dataVencimento":"2017-03-10",
-       "dataPagamento":"2017-03-10",
+       "dataVencimento":new Date(2017, 3, 10),
+       "dataPagamento":new Date(2017, 3, 10),
        "valor":1010.32,
        "tipo":"RECEITA",
        "categoria":"Escolar",
@@ -188,7 +179,7 @@ export class LancamentosPesquisaComponent  {
     {
        "codigo":21,
        "descricao":"Bahamas",
-       "dataVencimento":"2017-06-10",
+       "dataVencimento": new Date(2017, 6, 10),
        "dataPagamento":null,
        "valor":500,
        "tipo":"RECEITA",
@@ -198,7 +189,7 @@ export class LancamentosPesquisaComponent  {
     {
        "codigo":22,
        "descricao":"Bahamas",
-       "dataVencimento":"2017-06-10",
+       "dataVencimento": new Date(2017, 6, 10),
        "dataPagamento":null,
        "valor":500,
        "tipo":"RECEITA",
@@ -208,7 +199,7 @@ export class LancamentosPesquisaComponent  {
     {
        "codigo":23,
        "descricao":"Bahamas",
-       "dataVencimento":"2017-06-10",
+       "dataVencimento": new Date(2017, 6, 10),
        "dataPagamento":null,
        "valor":500,
        "tipo":"RECEITA",
@@ -218,7 +209,7 @@ export class LancamentosPesquisaComponent  {
     {
        "codigo":24,
        "descricao":"Bahamas",
-       "dataVencimento":"2017-06-10",
+       "dataVencimento": new Date(2017, 6, 10),
        "dataPagamento":null,
        "valor":500,
        "tipo":"RECEITA",
@@ -228,8 +219,8 @@ export class LancamentosPesquisaComponent  {
     {
        "codigo":25,
        "descricao":"Top Club",
-       "dataVencimento":"2017-03-10",
-       "dataPagamento":"2017-03-10",
+       "dataVencimento":new Date(2017, 3, 10),
+       "dataPagamento":new Date(2017, 3, 10),
        "valor":400.32,
        "tipo":"DESPESA",
        "categoria":"Escolar",

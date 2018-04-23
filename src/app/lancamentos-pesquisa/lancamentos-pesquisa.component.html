@@ -17,14 +17,14 @@
         <p-calendar [(ngModel)]="ontem"
                     readonlyInput="true"
                     dateFormat="dd/mm/yy"
-                    [locale]="br">
+                    [locale]="calendarioBr">
         </p-calendar>
 
         <label>até</label>
         <p-calendar [(ngModel)]="hoje"
                     readonlyInput="true"
                     dateFormat="dd/mm/yy"
-                    [locale]="br">
+                    [locale]="calendarioBr">
         </p-calendar>
 
     </div>
@@ -90,7 +90,7 @@
 
 </p-table>
 -->
-<!--
+
        <p-table emptyMessage="Não contém registros"
                    [value]="lancamentos"
                    [paginator]="true"
@@ -115,7 +115,7 @@
                               <td>{{lanc.descricao}}</td>
                               <td class="col-data">{{lanc.dataVencimento | date: 'dd/MM/yyyy'}}</td>
                               <td class="col-data">{{lanc.dataPagamento | date: 'dd/MM/yyyy'}}</td>
-                              <td class="col-valor" [style.color]="lanc.tipo === 'DESPESA' ? 'red' : 'blue'">{{lanc.valor}}</td>
+                              <td class="col-valor" [style.color]="lanc.tipo === 'DESPESA' ? 'red' : 'blue'">{{ lanc.valor | currency: 'BRL': 'pt-BR' :'1.2-2' }}</td>
                               <td class="col-button">
                                 <button pButton icon="fas fa-edit" pTooltip="editar" tooltipPosition="top" ></button>
                                 <button pButton icon="fas fa-trash"  pTooltip="excluir" tooltipPosition="top" ></button>
@@ -123,8 +123,8 @@
                             </tr>
                         </ng-template>
         </p-table>
-      -->
 
+<!--
 
                   <p-table [value]="lancamentos"
                   [paginator]="true"
@@ -149,7 +149,7 @@
                      </tr>
                   </ng-template>
 
-         </p-table>
+         </p-table> -->
 
   </div>
 </div>
