@@ -25,6 +25,7 @@ import { CadastroLancamentoComponent } from './cadastro-lancamento/cadastro-lanc
 import { CurrencyMaskModule } from 'ng2-currency-mask';
 import { CadastroPessoaComponent } from './cadastro-pessoa/cadastro-pessoa.component';
 import { MessageComponent } from './message/message.component';
+import { LancamentosGridComponent } from './lancamentos-grid/lancamentos-grid.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { MessageComponent } from './message/message.component';
     CampoColoridoDirective,
     CadastroLancamentoComponent,
     CadastroPessoaComponent,
-    MessageComponent
+    MessageComponent,
+    LancamentosGridComponent
   ],
   imports: [
     BrowserModule,

@@ -15,7 +15,9 @@
     <div class="ui-g-6 ui-md-3 ui-sm-12">
       <label>Vencimento</label>
       <p-calendar [locale]="calendarioBr" dateFormat="dd/mm/yy"
-        [readonlyInput]="true" [showIcon]="false"></p-calendar>
+        [readonlyInput]="true" [showIcon]="false" name="vencimento" #vencimento="ngModel" required ngModel></p-calendar>
+      <app-message erro="required" texto="Informe uma data de vencimento." [controle]="vencimento" ></app-message>
+
   </div>
   <div class="ui-g-6 ui-md-3 ui-sm-12">
     <label>{{ tipo.value === 'RECEITA' ? 'Recebimento' : 'Pagamento'}}</label>
@@ -42,9 +44,8 @@
           name="valor"
           [(ngModel)]="descricao" [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',', allowNegative: false }"
           pInputText placeholder="0,00" required #val="ngModel" />
-          <div *ngIf="val.hasError('required') && val.dirty" class="ui-message ui-messages-error">
-            Valor é obrigatório.
-          </div>
+
+          <app-message erro="required" [controle]="val" texto="Valor é obrigatório."> </app-message>
   </div>
  </div>
 
@@ -54,7 +55,8 @@
     <p-dropdown [options]="categorias"
                 [autoWidth]="false"
                 placeholder="--Selecione--"
-                #categoria></p-dropdown>
+                #categoria
+                required ></p-dropdown>
   </div>
 
   <div class="ui-g-6 ui-md-4 ui-sm-12 ui-fluid">
@@ -64,7 +66,8 @@
                 [autoWidth]="false"
                 placeholder="--Selecione--"
                 [filter]="true"
-                emptyFilterMessage="Nenhum resultado encontrado"></p-dropdown>
+                emptyFilterMessage="Nenhum resultado encontrado"
+                required ></p-dropdown>
   </div>
 </div>
 <div class="ui-g-12 left-align" >

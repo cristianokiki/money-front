@@ -12,4 +12,8 @@ export class CadastroPessoaComponent implements OnInit {
   ngOnInit() {
   }
 
+
+  public salvar(): void {
+
+ }
 }
